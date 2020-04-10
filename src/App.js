@@ -24,7 +24,7 @@ class App extends Component {
             home: {
               title: "Be passionate",
               subTitle: "Change the world, code by code.",
-              text: "Click on my projects for more info."
+              text: "Click on my projects to get more info."
             },
             about: {
               title: "About me"

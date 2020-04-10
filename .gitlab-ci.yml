@@ -1,10 +1,19 @@
  image: rambabusaravanan/firebase
 
- stages:
+ stages: 
   - build
+  - deploy
 
 build:
   stages: build
   script:
     - npm install
     - npm run build
+    
+deploy:
+  stage: deploy
+  script:
+    - npm install
+    - npm run build
+    - npm firebase use julianbazanaguirre-ecf1b --token $FIREBASE_TOKEN
+    - firebase deploy --only hosting -m "Pipeline $CI_PIPELINE_ID Build $CI_BUILD_ID" --token $FIREBASE_TOKEN
