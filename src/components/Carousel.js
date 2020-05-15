@@ -63,7 +63,6 @@ class Carousel extends Component {
         return items.map(item => {
             return <Card item={item} click={(e => this.handleCardClick(item.id, e))} key={item.id} />
         })
-    
     }
 
     render() { 
